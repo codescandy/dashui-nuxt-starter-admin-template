@@ -1,13 +1,3 @@
-node_modules
-*.log*
-.nuxt
-.nitro
-.cache
-.output
-.env
-dist
-.env
-
 # File created using '.gitignore Generator' for Visual Studio Code: https://bit.ly/vscode-gig
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,macos,node,nuxtjs,windows
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,macos,node,nuxtjs,windows

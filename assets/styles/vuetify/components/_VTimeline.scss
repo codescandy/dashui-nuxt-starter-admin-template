@@ -1,0 +1,89 @@
+// ℹ️ We are make even width of all v-timeline body
+.v-timeline--vertical.v-timeline {
+  .v-timeline-item {
+    .v-timeline-item__body {
+      justify-self: stretch !important;
+    }
+  }
+}
+
+// utilities
+.v-timeline-item {
+  .app-timeline-title {
+    color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.3125rem;
+  }
+
+  .app-timeline-meta {
+    color: rgba(var(--v-theme-on-surface), var(--v-disabled-opacity));
+    font-size: 10px;
+    line-height: 0.875rem;
+  }
+
+  .app-timeline-text {
+    color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+    font-size: 12px;
+    line-height: 1.25rem;
+  }
+}
+
+// 👉 Timeline
+.v-timeline {
+  .v-timeline-divider__dot {
+    background: none !important;
+
+    .v-timeline-divider__inner-dot {
+      box-shadow: 0 0 0 0.1875rem rgb(var(--v-theme-on-surface-variant));
+
+      @each $color-name in $theme-colors-name {
+        &.bg-#{$color-name} {
+          box-shadow: 0 0 0 0.1875rem rgba(var(--v-theme-#{$color-name}), 0.12);
+        }
+      }
+    }
+  }
+
+  // timeline icon only
+  &.v-timeline-icon-only {
+    .v-timeline-divider__dot {
+      .v-timeline-divider__inner-dot {
+        background: none;
+        box-shadow: none;
+
+        /* stylelint-disable-next-line no-descending-specificity */
+        .v-icon {
+          background: rgb(var(--v-theme-background));
+        }
+      }
+    }
+  }
+
+  // we have to override the default bg-color of the timeline dot in the card
+  .v-card:not(.v-card--variant-text, .v-card--variant-plain, .v-card--variant-outlined) & {
+    &.v-timeline-icon-only {
+      .v-timeline-divider__dot {
+        .v-timeline-divider__inner-dot {
+          /* stylelint-disable-next-line no-descending-specificity */
+          .v-icon {
+            background: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  .v-card.v-card--variant-tonal & {
+    &.v-timeline-icon-only {
+      .v-timeline-divider__dot {
+        .v-timeline-divider__inner-dot {
+          /* stylelint-disable-next-line no-descending-specificity */
+          .v-icon {
+            background: transparent;
+          }
+        }
+      }
+    }
+  }
+}

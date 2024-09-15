@@ -1,0 +1,29 @@
+$xs: map_get($breakpoints, xs);
+$sm: map_get($breakpoints, sm);
+$md: map_get($breakpoints, md);
+$lg: map_get($breakpoints, lg);
+$xl: map_get($breakpoints, xl);
+
+@mixin breakpoint($screenSize, $custom: false) {
+  @if $screenSize == xs {
+    @media only screen and (max-width: $sm - 1) and (min-width: $xs) {
+      @content;
+    }
+  } @else if $screenSize == sm {
+    @media only screen and (min-width: $sm) {
+      @content;
+    }
+  } @else if $screenSize == md {
+    @media only screen and (min-width: $md) {
+      @content;
+    }
+  } @else if $screenSize == lg {
+    @media only screen and (min-width: $lg) {
+      @content;
+    }
+  } @else if $screenSize == xl {
+    @media only screen and (min-width: $xl) {
+      @content;
+    }
+  }
+}

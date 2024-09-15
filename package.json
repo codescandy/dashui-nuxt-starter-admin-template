@@ -1,0 +1,38 @@
+{
+  "name": "dash-ui-vuetify-nuxt",
+  "private": false,
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.x"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "format": "prettier --write src/",
+    "generate": "nuxt generate",
+    "lint": "eslint . --ext .vue,.js,.jsx --fix --ignore-path .gitignore",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "reset": "rm -rf .nuxt node_modules .output package-lock.json && npm install"
+  },
+  "devDependencies": {
+    "@iconify/vue": "^4.1.2",
+    "@tabler/icons": "^3.2.0",
+    "@vite-pwa/nuxt": "^0.10.5",
+    "nuxt": "3.13.1",
+    "pinia": "^2.2.2",
+    "sass": "^1.78.0",
+    "vuetify": "^3.7.1"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.5.4",
+    "@vueuse/core": "^11.0.3",
+    "@vueuse/nuxt": "^11.0.3",
+    "apexcharts": "^3.53.0",
+    "dropzone-vue": "^0.1.11",
+    "vite-plugin-vuetify": "^2.0.4",
+    "vue-code-highlighter": "^1.1.2",
+    "vue3-apexcharts": "^1.6.0"
+  }
+}
