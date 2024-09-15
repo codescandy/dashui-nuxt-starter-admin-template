@@ -1,0 +1,71 @@
+@use '@configured-variables' as variable;
+@use 'vuetify/settings' with (
+  $toolbar-append-btn-margin-end: 0px,
+  $border-radius-root: map_get(variable.$root, border-radius),
+  $spacer: map_get(variable.$root, sapcer),
+  $divider-border-color: rgba(var(--v-border-color)),
+  // Grid
+  $grid-breakpoints:
+    (
+      xs: map_get(variable.$breakpoints, xs),
+      sm: map_get(variable.$breakpoints, sm),
+      md: map_get(variable.$breakpoints, md),
+      lg: map_get(variable.$breakpoints, lg),
+      xl: map_get(variable.$breakpoints, xl)
+    ),
+  // Shadow
+  $shadow-key-umbra-opacity: var(--v-shadow-key-umbra-opacity),
+  $shadow-key-penumbra-opacity: var(--v-shadow-key-penumbra-opacity),
+  $shadow-key-ambient-opacity: var(--v-shadow-key-ambient-opacity),
+  // Button
+  $button-height: map_get(variable.$button, height),
+  $button-border-radius: map_get(variable.$button, border-radius),
+  $button-text-letter-spacing: map_get(variable.$letter-spacing, body-root),
+  $button-line-height: map_get(variable.$line-height, body-root),
+  $button-font-size: map_get(variable.$font-size, body-root),
+  $button-font-weight: map_get(variable.$font-weight, 600),
+  // Menu
+  $menu-content-border-radius: map_get(variable.$menu, actions-padding),
+  // List
+  $list-item-title-typography:
+    (
+      map_get(variable.$font-size, body-root),
+      map_get(variable.$font-weight, 500),
+      map_get(variable.$letter-spacing, body-root),
+      map_get(variable.$line-height, body-root),
+      none
+    ),
+  $list-theme: map_get(variable.$list-item, theme),
+  $list-item-padding: map_get(variable.$list-item, padding),
+  $list-item-one-line-padding: map_get(variable.$list-item, padding),
+  $list-item-one-line-min-height: map_get(variable.$list-item, min-height),
+  $list-item-icon-margin-start: map_get(variable.$list-item, icon-margin),
+  $list-item-icon-margin-end: map_get(variable.$list-item, icon-margin),
+  // Table
+  $table-hover-color: map_get(variable.$table, hover-color),
+  $table-border-color: map_get(variable.$table, border-color),
+  $table-header-font-weight: map_get(variable.$font-weight, 600),
+  $table-header-height: map_get(variable.$table, header-height),
+  $table-row-height: map_get(variable.$table, row-height),
+  $table-column-padding: map_get(variable.$table, column-padding),
+  // Card
+  $card-border-radius: map_get(variable.$card, border-radius),
+  $card-elevation: map_get(variable.$card, elevation),
+  $card-item-padding: map_get(variable.$card, item-padding),
+  $card-title-padding: map_get(variable.$card, title-padding),
+  $card-actions-padding: map_get(variable.$card, actions-padding),
+  //Select
+  $select-line-height: 0.75rem,
+
+  // Expansion Panel
+  $expansion-panel-active-title-min-height: 49px,
+  $expansion-panel-title-min-height: 41px,
+  $expansion-panel-active-margin: 8px,
+  $expansion-panel-title-padding: 8px,
+  $expansion-panel-text-padding: 12px 12px 12px 12px,
+
+  // tooltip
+  $tooltip-background-color: rgba(var(--v-tooltip-background)),
+  $tooltip-line-height: 1.5,
+  $tooltip-padding: 3px 10px
+);

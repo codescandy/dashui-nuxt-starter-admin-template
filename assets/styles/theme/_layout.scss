@@ -1,0 +1,21 @@
+// Top Bar =================
+.app-header {
+  box-shadow: $dash-ui-header-box-shadow !important;
+  padding: 0 24px !important;
+}
+
+.app-header-horizontal {
+  padding: 0 24px !important;
+}
+
+// Sidebar =================
+.sidebar-visibile {
+  top: 0 !important;
+  z-index: 1022 !important;
+  height: 100% !important;
+}
+
+// Content Area =================
+.app-content-area {
+  padding: $dash-ui-app-content-area;
+}

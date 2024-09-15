@@ -1,0 +1,80 @@
+@use 'sass:map';
+
+@mixin elevation($z, $important: false) {
+  box-shadow:
+    map.get($shadow-key-umbra, $z),
+    map.get($shadow-key-penumbra, $z),
+    map.get($shadow-key-ambient, $z) if($important, !important, null);
+}
+
+// Font Weight
+@for $i from 1 through 9 {
+  .font-weight-#{$i} {
+    font-weight: $i * 100 !important;
+  }
+}
+
+// Min Width , Width , Size and Height , Min Height
+@for $i from 1 through 200 {
+  .min-w-#{$i} {
+    min-width: $i * $spacer !important;
+  }
+
+  .max-w-#{$i} {
+    max-width: $i * $spacer !important;
+  }
+
+  .width-#{$i} {
+    width: $i * $spacer;
+  }
+
+  .min-h-#{$i} {
+    min-height: $i * $spacer !important;
+  }
+
+  .height-#{$i} {
+    height: $i * $spacer !important;
+  }
+
+  .size-#{$i} {
+    min-width: $i * $spacer;
+    min-height: $i * $spacer;
+    max-width: $i * $spacer;
+    max-height: $i * $spacer;
+  }
+}
+
+// Soft Background
+.soft-bg {
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@each $color-name in $theme-colors-name {
+  .soft-bg-#{$color-name} {
+    @extend .soft-bg;
+    background: rgba(var(--v-theme- + $color-name), 0.3);
+  }
+}
+
+// Responsive Border
+@for $i from 0 through 10 {
+  .border-#{$i} {
+    border: $i + px solid rgba(var(--v-border-color), var(--v-border-opacity));
+  }
+
+  @each $screen in $theme-screen {
+    @each $direction in $theme-direction {
+      .border-#{$direction}-#{$i} {
+        border-#{$direction}: $i + px solid rgba(var(--v-border-color), var(--v-border-opacity));
+      }
+      .border-#{$screen}-#{$direction}-#{$i} {
+        @include breakpoint($screen) {
+          border-#{$direction}: $i + px solid rgba(var(--v-border-color), var(--v-border-opacity)) !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,356 @@
+@use '@configured-variables' as variable;
+@use 'sass:math';
+@use 'sass:map';
+@use 'sass:meta';
+@use 'vuetify/lib/styles/tools/functions' as *;
+
+// Global font size and border radius
+$color-pack: false;
+$font-size-root: map_get(variable.$font-size, main-root) !default;
+$heading-font-family: variable.$body-font-family !default;
+
+// Global Radius as per breakeven point
+$rounded: () !default;
+$rounded: map-deep-merge(
+  (
+    0: 0,
+    'sm': map_get(variable.$root, border-radius) - 4,
+    null: map_get(variable.$root, border-radius),
+    'md': map_get(variable.$root, border-radius) * 1,
+    'lg': map_get(variable.$root, border-radius) * 2,
+    'xl': map_get(variable.$root, border-radius) * 6,
+    'pill': 9999px,
+    'circle': 50%,
+    'shaped': map_get(variable.$root, border-radius) * 6 0
+  ),
+  $rounded
+);
+
+// Global Typography
+$typography: (
+  'h1': (
+    'size': map_get(variable.$font-size, h1),
+    'weight': map_get(variable.$font-weight, 700),
+    'line-height': map_get(variable.$line-height, h1),
+    'letter-spacing': map_get(variable.$letter-spacing, h1)
+  ),
+
+  'h2': (
+    'size': map_get(variable.$font-size, h2),
+    'weight': map_get(variable.$font-weight, 600),
+    'line-height': map_get(variable.$line-height, h2),
+    'letter-spacing': map_get(variable.$letter-spacing, h2)
+  ),
+
+  'h3': (
+    'size': map_get(variable.$font-size, h3),
+    'weight': map_get(variable.$font-weight, 600),
+    'line-height': map_get(variable.$line-height, h3),
+    'letter-spacing': map_get(variable.$letter-spacing, h3)
+  ),
+
+  'h4': (
+    'size': map_get(variable.$font-size, h4),
+    'weight': map_get(variable.$font-weight, 600),
+    'line-height': map_get(variable.$line-height, h4),
+    'letter-spacing': map_get(variable.$letter-spacing, h4)
+  ),
+
+  'h5': (
+    'size': map_get(variable.$font-size, h5),
+    'weight': map_get(variable.$font-weight, 600),
+    'line-height': map_get(variable.$line-height, h5),
+    'letter-spacing': map_get(variable.$letter-spacing, body-root)
+  ),
+
+  'h6': (
+    'size': map_get(variable.$font-size, h6),
+    'weight': map_get(variable.$font-weight, 500),
+    'line-height': map_get(variable.$line-height, h6),
+    'letter-spacing': map_get(variable.$letter-spacing, body-root)
+  ),
+
+  'subtitle-1': (
+    'size': map_get(variable.$font-size, body-root),
+    'weight': map_get(variable.$font-weight, 400),
+    'line-height': map_get(variable.$line-height, body-root),
+    'letter-spacing': map_get(variable.$letter-spacing, body-root)
+  ),
+
+  'subtitle-2': (
+    'size': map_get(variable.$font-size, body-root-2),
+    'weight': map_get(variable.$font-weight, 400),
+    'line-height': map_get(variable.$line-height, body-root),
+    'letter-spacing': map_get(variable.$letter-spacing, body-root)
+  ),
+
+  'body-1': (
+    'size': map_get(variable.$font-size, body-root),
+    'weight': map_get(variable.$font-weight, 400),
+    'line-height': map_get(variable.$line-height, body-root),
+    'letter-spacing': map_get(variable.$letter-spacing, body-root)
+  ),
+
+  'body-2': (
+    'size': map_get(variable.$font-size, body-root-2),
+    'weight': map_get(variable.$font-weight, 400),
+    'line-height': map_get(variable.$line-height, body-root),
+    'letter-spacing': map_get(variable.$letter-spacing, body-root)
+  ),
+
+  'button': (
+    'size': map_get(variable.$font-size, body-root),
+    'weight': map_get(variable.$font-weight, 600),
+    'line-height': map_get(variable.$line-height, body-root),
+    'letter-spacing': map_get(variable.$letter-spacing, body-root)
+  ),
+
+  'caption': (
+    'size': map_get(variable.$font-size, body-root),
+    'weight': map_get(variable.$font-weight, 400),
+    'line-height': map_get(variable.$line-height, body-root),
+    'letter-spacing': map_get(variable.$letter-spacing, body-root)
+  ),
+
+  'overline': (
+    'size': map_get(variable.$font-size, body-root),
+    'weight': map_get(variable.$font-weight, 400),
+    'line-height': map_get(variable.$line-height, body-root),
+    'letter-spacing': map_get(variable.$letter-spacing, body-root)
+  )
+) !default;
+
+// 👉 Shadows
+$shadow-key-umbra: (
+  0: (
+    0 0 0 0 rgba(var(--v-shadow-key-umbra-color), 1)
+  ),
+  1: (
+    0 2px 4px rgba(var(--v-shadow-key-umbra-color), 0.12)
+  ),
+  2: (
+    0 2px 6px rgba(var(--v-shadow-key-umbra-color), 0.14)
+  ),
+  3: (
+    0 3px 8px rgba(var(--v-shadow-key-umbra-color), 0.14)
+  ),
+  4: (
+    0 3px 9px rgba(var(--v-shadow-key-umbra-color), 0.15)
+  ),
+  5: (
+    0 4px 10px rgba(var(--v-shadow-key-umbra-color), 0.15)
+  ),
+  6: (
+    0 4px 11px rgba(var(--v-shadow-key-umbra-color), 0.16)
+  ),
+  7: (
+    0 4px 18px rgba(var(--v-shadow-key-umbra-color), 0.1)
+  ),
+  8: (
+    0 4px 13px rgba(var(--v-shadow-key-umbra-color), 0.18)
+  ),
+  9: (
+    0 5px 14px rgba(var(--v-shadow-key-umbra-color), 0.18)
+  ),
+  10: (
+    0 5px 15px rgba(var(--v-shadow-key-umbra-color), 0.2)
+  ),
+  11: (
+    0 5px 16px rgba(var(--v-shadow-key-umbra-color), 0.2)
+  ),
+  12: (
+    0 6px 17px rgba(var(--v-shadow-key-umbra-color), 0.22)
+  ),
+  13: (
+    0 6px 18px rgba(var(--v-shadow-key-umbra-color), 0.22)
+  ),
+  14: (
+    0 6px 19px rgba(var(--v-shadow-key-umbra-color), 0.24)
+  ),
+  15: (
+    0 7px 20px rgba(var(--v-shadow-key-umbra-color), 0.24)
+  ),
+  16: (
+    0 7px 21px rgba(var(--v-shadow-key-umbra-color), 0.26)
+  ),
+  17: (
+    0 7px 22px rgba(var(--v-shadow-key-umbra-color), 0.26)
+  ),
+  18: (
+    0 8px 23px rgba(var(--v-shadow-key-umbra-color), 0.28)
+  ),
+  19: (
+    0 8px 24px 6px rgba(var(--v-shadow-key-umbra-color), 0.28)
+  ),
+  20: (
+    0 9px 25px rgba(var(--v-shadow-key-umbra-color), 0.3)
+  ),
+  21: (
+    0 9px 26px rgba(var(--v-shadow-key-umbra-color), 0.32)
+  ),
+  22: (
+    0 9px 27px rgba(var(--v-shadow-key-umbra-color), 0.32)
+  ),
+  23: (
+    0 10px 28px rgba(var(--v-shadow-key-umbra-color), 0.34)
+  ),
+  24: (
+    0 10px 30px rgba(var(--v-shadow-key-umbra-color), 0.34)
+  )
+) !default;
+
+$shadow-key-penumbra: (
+  0: (
+    0 0 transparent
+  ),
+  1: (
+    0 0 transparent
+  ),
+  2: (
+    0 0 transparent
+  ),
+  3: (
+    0 0 transparent
+  ),
+  4: (
+    0 0 transparent
+  ),
+  5: (
+    0 0 transparent
+  ),
+  6: (
+    0 0 transparent
+  ),
+  7: (
+    0 0 transparent
+  ),
+  8: (
+    0 0 transparent
+  ),
+  9: (
+    0 0 transparent
+  ),
+  10: (
+    0 0 transparent
+  ),
+  11: (
+    0 0 transparent
+  ),
+  12: (
+    0 0 transparent
+  ),
+  13: (
+    0 0 transparent
+  ),
+  14: (
+    0 0 transparent
+  ),
+  15: (
+    0 0 transparent
+  ),
+  16: (
+    0 0 transparent
+  ),
+  17: (
+    0 0 transparent
+  ),
+  18: (
+    0 0 transparent
+  ),
+  19: (
+    0 0 transparent
+  ),
+  20: (
+    0 0 transparent
+  ),
+  21: (
+    0 0 transparent
+  ),
+  22: (
+    0 0 transparent
+  ),
+  23: (
+    0 0 transparent
+  ),
+  24: (
+    0 0 transparent
+  )
+) !default;
+
+$shadow-key-ambient: (
+  0: (
+    0 0 transparent
+  ),
+  1: (
+    0 0 transparent
+  ),
+  2: (
+    0 0 transparent
+  ),
+  3: (
+    0 0 transparent
+  ),
+  4: (
+    0 0 transparent
+  ),
+  5: (
+    0 0 transparent
+  ),
+  6: (
+    0 0 transparent
+  ),
+  7: (
+    0 0 transparent
+  ),
+  8: (
+    0 0 transparent
+  ),
+  9: (
+    0 0 transparent
+  ),
+  10: (
+    0 0 transparent
+  ),
+  11: (
+    0 0 transparent
+  ),
+  12: (
+    0 0 transparent
+  ),
+  13: (
+    0 0 transparent
+  ),
+  14: (
+    0 0 transparent
+  ),
+  15: (
+    0 0 transparent
+  ),
+  16: (
+    0 0 transparent
+  ),
+  17: (
+    0 0 transparent
+  ),
+  18: (
+    0 0 transparent
+  ),
+  19: (
+    0 0 transparent
+  ),
+  20: (
+    0 0 transparent
+  ),
+  21: (
+    0 0 transparent
+  ),
+  22: (
+    0 0 transparent
+  ),
+  23: (
+    0 0 transparent
+  ),
+  24: (
+    0 0 transparent
+  )
+) !default;
