@@ -37,25 +37,25 @@ useSeoMeta({
           <div class="mb-6">
             <div id="intro">
               <h1 class="text-h1">Installation</h1>
-              <p>Welcome to the Dash UI Vue version of the original DashUI HTML theme.</p>
+              <p>Welcome to the Dash UI Nuxt free version of the original DashUI HTML theme.</p>
               <v-divider class="my-4" />
             </div>
 
             <div id="getting-started" class="py-6">
               <h2 class="text-h3">Getting Started</h2>
               <p class="intro-font my-3">
-                A professional Dash UI Vue Dashboard that comes with plenty of ready-to-use
+                A professional Dash UI Nuxt Dashboard that comes with plenty of ready-to-use
                 components that will help you to build more beautiful application.
               </p>
               <p class="intro-font my-3">
                 Dash UI is built with the most popular The Progressive JavaScript Framework
-                <a href="https://vuejs.org/" target="_blank" class="intro-font">VueJs</a> and Vue
+                <a href="https://nuxt.com/" target="_blank" class="intro-font">Nuxt Js</a> and Vue
                 Component Framework
                 <a href="https://vuetifyjs.com/" target="_blank" class="intro-font">Vuetify</a>.
               </p>
               <p>
-                This doc will guide you to understand how DashUI-VueJS theme is organized, basics of
-                how to customize, and how to run and build final version from the source code.
+                This doc will guide you to understand how DashUI-Nuxt Js theme is organized, basics
+                of how to customize, and how to run and build free version from the source code.
               </p>
             </div>
 
@@ -64,7 +64,7 @@ useSeoMeta({
             <div id="running-in-local-environment" class="py-6">
               <h2 class="text-h3">Running in Local environment</h2>
               <p class="text-body-1">
-                This project is scaffolded using <code>create vue@latest</code> with Vue Router for
+                This project is scaffolded using <code>create nuxt@latest</code> with Vue Router for
                 Single Page Application development, Pinia for state management, Vitest for Unit
                 testing, ESLint for code quality and Prettier for code formatting settings to Yes
               </p>
@@ -84,14 +84,18 @@ useSeoMeta({
                   </li>
 
                   <li>
-                    <h3>Install Dash UI VueJS</h3>
+                    <h3>Install Dash UI Nuxt Free Version</h3>
                     <p class="intro-font my-3">
-                      Open the <code>dash-ui-vuejs</code> directory with your cmd or terminal. Open
-                      the project folder and install its dependencies.
+                      Open the <code>dashui-nuxt-starter-admin-template</code> directory with your
+                      cmd or terminal. Open the project folder and install its dependencies.
                     </p>
                     <div class="bg-grey-200 border-1 rounded-sm pa-3 my-3">
                       <p class="text-body-1 font-weight-bold">Navigate to your project folder</p>
-                      <VueCodeHighlighter lang="js" :code="`cd dash-ui-vuejs`" class="my-4" />
+                      <VueCodeHighlighter
+                        lang="js"
+                        :code="`cd dashui-nuxt-starter-admin-template`"
+                        class="my-4"
+                      />
                     </div>
 
                     <div class="bg-grey-200 border-1 rounded-sm pa-3 my-3">
@@ -103,7 +107,7 @@ useSeoMeta({
                   </li>
 
                   <li>
-                    <h3>Starting Dash UI VueJS</h3>
+                    <h3>Starting Dash UI Nuxt Free Version</h3>
                     <p class="intro-font my-3">
                       After installing all required dependencies, you can start your project at the
                       development server on http://localhost:3000 with below npm command.
@@ -119,10 +123,6 @@ useSeoMeta({
                       Visit
                       <a href="http://localhost:3000" target="_blank">http://localhost:3000</a>
                       to view your application
-                    </p>
-                    <p class="intro-font my-3">
-                      Edit <code>src/pages/Start.vue</code> and see the updated result in your
-                      browser
                     </p>
                   </li>
                 </ol>

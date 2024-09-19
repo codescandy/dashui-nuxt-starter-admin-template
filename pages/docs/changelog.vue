@@ -34,7 +34,7 @@ useSeoMeta({
 
           <div id="v1" class="py-4 d-flex flex-wrap ga-8">
             <p class="text-h4 font-weight-bold">
-              <span class="code text-h4 font-weight-bold"> v1.0.0 </span> - April 15, 2024
+              <span class="code text-h4 font-weight-bold"> v1.0.0 </span> - September 15, 2024
             </p>
             <p class="text-h4 font-weight-bold">Initial Relase</p>
           </div>
