@@ -71,22 +71,22 @@ textarea {
   display: flex;
   align-items: center;
 
-  // > * {
-  //   &:not(:first-child) {
-  //     margin-inline-start: -1rem;
-  //   }
+  > * {
+    &:not(:first-child) {
+      margin-inline-start: -1rem;
+    }
 
-  //   transition:
-  //     transform 0.25s ease,
-  //     box-shadow 0.15s ease;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.15s ease;
 
-  //   &:hover {
-  //     z-index: 2;
-  //     transform: translateY(-2px) scale(1.05);
+    &:hover {
+      z-index: 2;
+      transform: translateY(-2px) scale(1.05);
 
-  //     @include elevation(3);
-  //   }
-  // }
+      @include elevation(3);
+    }
+  }
 
   > .v-avatar {
     border: 2px solid rgb(var(--v-theme-surface));

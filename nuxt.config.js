@@ -11,6 +11,7 @@ const url = "";
 const themeColor = "#f1f5f9";
 
 export default defineNuxtConfig({
+  ssr: false,
   alias: {
     "@configured-variables": fileURLToPath(
       new URL("./assets/styles/_variables.scss", import.meta.url)
@@ -126,7 +127,7 @@ export default defineNuxtConfig({
   ],
 
   pwa: {
-    includeAssets: ["favicon.ico", "robots.txt"],
+    registerType: "autoUpdate",
     manifest: {
       name: shortTitle,
       short_name: shortTitle,
