@@ -6,8 +6,8 @@ const title = "Dash UI - Vuetify Nuxt Admin Template Free";
 const shortTitle = "Dash UI - Vuetify Nuxt Admin Template Free";
 const description =
   "Dash UI - Vuetify Nuxt Admin Template Free and open-source Github, provides developers with everything need to create Web Application & Kick start project";
-const image = "";
-const url = "";
+const image = "https://dashui-nuxt-starter-admin-template.netlify.app/starter.png";
+const url = "https://dashui-nuxt-starter-admin-template.netlify.app";
 const themeColor = "#f1f5f9";
 
 export default defineNuxtConfig({
