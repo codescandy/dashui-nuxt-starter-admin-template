@@ -18,6 +18,12 @@ defineProps({
     <layout-and-page />
     <ui-components />
     <docs />
+
+    <a href="https://github.com/codescandy/dashui-nuxt-starter-admin-template" target="_blank">
+      <div class="pa-6">
+        <v-btn prepend-icon="tabler-download" variant="outlined" class="w-100"> Download </v-btn>
+      </div>
+    </a>
   </v-list>
 </template>
 
