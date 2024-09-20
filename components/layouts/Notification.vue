@@ -30,7 +30,7 @@ const notification = [
         <v-icon size="25" icon="tabler-bell" />
       </icon-btn>
     </template>
-    <v-card height="100%" color="notification-card" elevation="0" rounded="lg">
+    <v-card height="100%" color="notification-card" rounded="lg">
       <div class="notification-card__header bg-surface rounded-t">
         <v-card-title class="d-flex py-3 align-center justify-space-between">
           <h4 class="text-h4">Notification</h4>

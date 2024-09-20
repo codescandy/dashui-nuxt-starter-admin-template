@@ -32,21 +32,28 @@ useSeoMeta({
             <p>Inside the zip-file you&apos;ll find the following directories and files.</p>
             <br />
             <pre>
-theme/
-├── public/
-├── src/
-├── tests/
-├── .eslintrc.cjs
-├── .gitignore
-├── .prettierrc
-├── README.md
-├── index.html
-├── jsconfig.json
-├── netlify.toml
-├── nightwatch.conf.cjs
-├── package.json
-├── vite.config.js
-└── vitest.config.js
+dashui-nuxt-starter-admin-template
+  ├── .nuxt/
+  ├── .output/
+  ├── app/
+  ├── assets/
+  ├── components/
+  ├── composables/
+  ├── layouts/
+  ├── pages/
+  ├── plugins/
+  ├── public/
+  ├── stores/
+  ├── utils/
+  ├── .gitignore
+  ├── .prettierignore
+  ├── .prettierrc
+  ├── app.vue
+  ├── error.vue
+  ├── nuxt.config.js
+  ├── package.json
+  ├── README.md
+  └── tsconfig.json
 								</pre
             >
           </div>

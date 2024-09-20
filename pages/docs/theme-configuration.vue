@@ -10,10 +10,6 @@ const contantList = [
     name: "Updating Colors",
     to: "updating-colors",
   },
-  {
-    name: "Default Dark Theme",
-    to: "default-dark-theme",
-  },
 ];
 
 useSeoMeta({
@@ -54,7 +50,9 @@ useSeoMeta({
               <p class="intro-font my-3">
                 Here, we will go over how you can customize the theme/colors in our template. <br />
                 Theme's colors and modes are defined in
-                <span class="text-grey-400"> src/plugins/vuetify/theme.js. </span>
+                <span class="text-grey-400">
+                  /dashui-nuxt-starter-admin-template/plugins/vuetify/theme.js.
+                </span>
               </p>
 
               <p class="intro-font my-3">
@@ -63,7 +61,10 @@ useSeoMeta({
               </p>
 
               <p class="intro-font">
-                File: <span class="text-grey-400"> /src/plugins/vuetify/theme.js</span>
+                File:
+                <span class="text-grey-400">
+                  /dashui-nuxt-starter-admin-template/utils/theme.js</span
+                >
               </p>
 
               <VueCodeHighlighter
@@ -112,60 +113,6 @@ useSeoMeta({
                 </p>
               </v-alert>
             </div>
-
-            <v-divider class="my-4" />
-
-            <div id="default-dark-theme" class="py-6">
-              <h2 class="text-h3">Set as default dark theme mode</h2>
-
-              <div class="py-3">
-                <p class="intro-font my-3">
-                  Vuetify comes with two themes pre-installed, <code>light</code> and
-                  <code>dark</code>. To set the default theme of your application, use the
-                  defaultTheme option.
-                </p>
-
-                <p class="intro-font my-3">
-                  Mostly you will use default light theme mode, you can set
-                  <span class="text-grey-400">dark</span> or
-                  <span class="text-grey-400">light</span> as for your prefrence.
-                </p>
-
-                <p class="intro-font">
-                  File: <span class="text-grey-400"> /plugins/vuetify/theme.js</span>
-                </p>
-
-                <VueCodeHighlighter
-                  lang="js"
-                  :code="`const theme = {
-  defaultTheme: 'dark'
-  // other settings
-}
-
-// After change clear your local storage and reload page.`"
-                  width="100%"
-                  height="100%"
-                  font-size="16px"
-                  theme="dark"
-                  class="my-4"
-                />
-              </div>
-            </div>
-
-            <v-alert color="error" variant="outlined" class="my-4">
-              <p class="text-error">
-                <b>Note</b>
-                <br />
-                Make sure you clear the browser's local storage in order to see the config changes
-                in the template. Refer:
-                <a
-                  href="https://docs.devolutions.net/kb/general-knowledge-base/clear-browser-local-storage/"
-                  target="_blank"
-                  class="text-error"
-                  >How to clear site storage?</a
-                >.
-              </p>
-            </v-alert>
           </div>
         </v-col>
         <v-col lg="3" class="d-none d-lg-block">

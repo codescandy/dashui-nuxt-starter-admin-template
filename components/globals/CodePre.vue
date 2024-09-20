@@ -49,38 +49,3 @@ const tab = ref(null);
     </v-card-text>
   </v-card>
 </template>
-
-<style lang="scss">
-.wrapper-code-highlight {
-  margin-top: 0px;
-  > .header-code-highlight {
-    justify-content: end;
-
-    > .wrapper-section-code-highlight {
-      display: none;
-    }
-    > .wrapper-copy-code-highlight {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgb(var(--v-theme-grey-600));
-
-      &:hover {
-        background: rgb(var(--v-theme-primary));
-      }
-    }
-  }
-}
-
-.app-design-window-item {
-  > * {
-    margin: 4px;
-  }
-
-  &.extra-margin {
-    > * {
-      margin: 12px !important;
-    }
-  }
-}
-</style>
