@@ -19,7 +19,7 @@ defineProps({
     <ui-components />
     <docs />
 
-    <a href="https://github.com/codescandy/dashui-nuxt-starter-admin-template" target="_blank">
+    <a href="https://dashui.codescandy.com/nuxt-js-admin-dashboard-template.html" target="_blank">
       <div class="pa-6">
         <v-btn prepend-icon="tabler-download" variant="outlined" class="w-100"> Download </v-btn>
       </div>
